@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+</head>
+<a href="https://www.intheblack.com/-/media/intheblack/allimages/technology/2020/dice-fake-fact.jpg?h=476&la=en&mw=806&w=806&rev=79209c925ba541f4a5ee0cbe6a59d00a">
+<img alt="Aww Snap! Image not showing" src="https://www.intheblack.com/-/media/intheblack/allimages/technology/2020/dice-fake-fact.jpg?h=476&la=en&mw=806&w=806&rev=79209c925ba541f4a5ee0cbe6a59d00a" width="1500" height="300"></a>
+<body style="background-color:black;">
+
+<div class="login">
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+
+<form action="{{ url_for('predict')}}" method="POST">
+
+<textarea  name="message" rows="6" cols="50" required="required" style="font-size: 18pt" placeholder="Enter News..."></textarea>
+<br> </br>
+<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+<div class="results">
+{% if prediction == ['FAKE']%}
+<h2 style="color:red;">Spam </h2>
+{% elif prediction == ['REAL']%}
+<h2 style="color:green;"><b>Real</b></h2>
+{% endif %}
+</div>
+h2{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</form>						
+</body>
+</html>
